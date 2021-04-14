@@ -38,7 +38,7 @@ Localizer.defaultLanguage = 'EN';
 function App() {
     const { localize, language, setLanguage } = useLocalizer();
     
-    const handleClick = () => {
+    const toggleLanguage = () => {
         const to = language === 'EN' ? 'RU' : 'EN';
         
         setLanguage(to);
@@ -47,7 +47,7 @@ function App() {
     return (
         <div>
             <h1>{localize('Amazing title')}</h1>
-            <button onClick={handleClick}>{localize('Toggle language')}</button>
+            <button onClick={toggleLanguage}>{localize('Toggle language')}</button>
         </div>
     );
 }

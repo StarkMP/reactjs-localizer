@@ -11,6 +11,7 @@ module.exports = {
         publicPath: '/dist',
         libraryTarget: 'umd',
         library: 'reactjs-localizer',
+        globalObject: 'this'
     },
     externals: {
         react: {
