@@ -3,15 +3,9 @@ import React, { useCallback, useState, useContext, createContext } from 'react';
 export class Localizer {
     static locales = {};
     static defaultLanguage = 'EN';
-    static mounted = false;
 
     static mount(obj) {
-        if (Localizer.mounted) {
-            return;
-        }
-
         Localizer.locales = obj;
-        Localizer.mounted = true;
     }
 
     static localize(lang, toLocalize) {
