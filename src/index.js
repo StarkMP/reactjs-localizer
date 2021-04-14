@@ -7,7 +7,7 @@ export class Localizer {
 
     static mount(obj) {
         if (Localizer.mounted) {
-            throw new Error('Localizer was mounted');
+            return;
         }
 
         Localizer.locales = obj;
