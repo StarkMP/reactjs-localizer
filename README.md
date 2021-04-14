@@ -20,16 +20,16 @@ yarn install reactjs-localizer
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Localizer, LocaleProvider, useLocalizer } from 'reactjs-localize';
+import { Localizer, LocaleProvider, useLocalizer } from 'reactjs-localizer';
 
 Localizer.mount({
-    "Amazing title": {
-        "EN": "Amazing title",
-        "RU": "Удивительный заголовок"
+    'Amazing title': {
+        'EN': 'Amazing title',
+        'RU': 'Удивительный заголовок'
     },
-    "Toggle language": {
-        "EN": "Toggle language",
-        "RU": "Переключить язык"
+    'Toggle language': {
+        'EN': 'Toggle language',
+        'RU': 'Переключить язык'
     }
 });
 
