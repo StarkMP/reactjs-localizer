@@ -25,6 +25,6 @@ class Localizer {
     }
 }
 
-export {
+export default {
     Localizer, useLocalizer, LocaleProvider
 };
