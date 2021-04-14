@@ -7,7 +7,10 @@ module.exports = {
     output: {
         filename: '[name].js',
         chunkFilename: '[id].chunk.js',
-        path: __dirname
+        path: __dirname,
+        publicPath: '/dist',
+        libraryTarget: 'umd',
+        library: 'reactjs-localizer',
     },
     externals: {
         react: {

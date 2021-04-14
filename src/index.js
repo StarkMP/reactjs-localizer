@@ -1,6 +1,6 @@
-import { useLocalizer, LocaleProvider } from './context';
+import React, { useCallback, useState, useContext, createContext } from 'react';
 
-class Localizer {
+export class Localizer {
     static locales = {};
     static defaultLanguage = 'EN';
     static mounted = false;
@@ -25,6 +25,29 @@ class Localizer {
     }
 }
 
-export default {
-    Localizer, useLocalizer, LocaleProvider
+const Context = createContext();
+
+export const useLocalizer = () => useContext(Context);
+
+export const LocaleProvider = ({ children }) => {
+    const [language, setLanguage] = useState(Localizer.defaultLanguage);
+
+    const localize = useCallback(
+        (toLocalize) => {
+            return Localizer.localize(language, toLocalize);
+        },
+        [language]
+    );
+
+    return (
+        <Context.Provider
+            value={{
+                language,
+                localize,
+                setLanguage,
+            }}
+        >
+            {children}
+        </Context.Provider>
+    );
 };
