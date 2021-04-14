@@ -1,0 +1,53 @@
+import { useCallback, useState, useContext, createContext } from 'react';
+
+const Context = createContext();
+
+export class Localizer {
+    static locales = {};
+    static defaultLanguage = 'EN';
+    static mounted = false;
+
+    static mount(obj) {
+        if (Localizer.mounted) {
+            throw new Error('Localizer was mounted');
+        }
+
+        Localizer.locales = obj;
+        Localizer.mounted = true;
+    }
+
+    static localize(lang, toLocalize) {
+        const phrase = Localizer.locales[toLocalize];
+
+        if (!phrase) {
+            throw new Error(`Phrase ${toLocalize} is not defined at locales`);
+        }
+
+        return phrase[lang] || toLocalize;
+    }
+}
+
+export const useLocalizer = () => useContext(Context);
+
+export const LocaleProvider = ({ children }) => {
+    const [language, setLanguage] = useState(Localizer.defaultLanguage);
+
+    const localize = useCallback(
+        (toLocalize) => {
+            return Localizer.localize(language, toLocalize);
+        },
+        [language]
+    );
+
+    return (
+        <Context.Provider
+            value={{
+                language,
+                localize,
+                setLanguage,
+            }}
+        >
+            {children}
+        </Context.Provider>
+    );
+};
