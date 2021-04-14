@@ -36,13 +36,10 @@ Localizer.mount({
 Localizer.defaultLanguage = 'EN';
 
 function App() {
-    const { localize, language, setLanguage } = useLocalizer();
+    // You can get localize, language, setLanguage from this hook
+    const { localize, setLanguage } = useLocalizer();
     
-    const toggleLanguage = () => {
-        const to = language === 'EN' ? 'RU' : 'EN';
-        
-        setLanguage(to);
-    };
+    const toggleLanguage = () => setLanguage(prev => prev === 'EN' ? 'RU' : 'EN');
 
     return (
         <div>
