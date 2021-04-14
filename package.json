@@ -1,6 +1,6 @@
 {
     "name": "reactjs-localizer",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Localizer for ReactJS applications",
     "main": "./reactjs-localizer.js",
     "scripts": {
