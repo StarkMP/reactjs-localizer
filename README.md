@@ -2,7 +2,7 @@
 Localizer for your react app
 
 ## Features
-- 4kb size
+- 5kb size
 - Auto-refresh localization after changing language
 - Hooks support
 
@@ -15,7 +15,7 @@ or
 yarn install reactjs-localizer
 ```
 
-## Usage
+## Usage example
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -36,7 +36,7 @@ Localizer.mount({
 Localizer.defaultLanguage = 'EN';
 
 function App() {
-    // You can get localize, language, setLanguage from this hook
+    // You can get { localize, language, setLanguage } from this hook
     const { localize, setLanguage } = useLocalizer();
     
     const toggleLanguage = () => setLanguage(prev => prev === 'EN' ? 'RU' : 'EN');
@@ -58,4 +58,4 @@ ReactDOM.render(
 ```
 
 ## License
-ISC
+MIT

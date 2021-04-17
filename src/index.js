@@ -12,7 +12,7 @@ export class Localizer {
         const phrase = Localizer.locales[toLocalize];
 
         if (!phrase) {
-            throw new Error(`Phrase ${toLocalize} is not defined at locales`);
+            throw new Error(`Phrase "${toLocalize}" is not defined at locales`);
         }
 
         return phrase[lang] || toLocalize;

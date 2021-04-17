@@ -1,6 +1,6 @@
 {
     "name": "reactjs-localizer",
-    "version": "0.1.61",
+    "version": "0.1.62",
     "description": "Localizer for ReactJS applications",
     "main": "./reactjs-localizer.js",
     "scripts": {
@@ -18,7 +18,8 @@
         "react",
         "locale",
         "localize",
-        "internalization"
+        "internalization",
+        "intl"
     ],
     "author": "Maxim Serebryakov <t.me/stark_n1>",
     "license": "ISC",
@@ -30,12 +31,14 @@
         "react": "^17.0.2"
     },
     "devDependencies": {
-        "webpack": "^5.32.0",
         "@babel/core": "^7.13.15",
         "@babel/plugin-proposal-class-properties": "^7.13.0",
         "@babel/polyfill": "^7.12.1",
         "@babel/preset-env": "^7.13.15",
         "@babel/preset-react": "^7.13.13",
-        "babel-loader": "^8.2.2"
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.2.2",
+        "eslint": "^7.24.0",
+        "webpack": "^5.32.0"
     }
 }
