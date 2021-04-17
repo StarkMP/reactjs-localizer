@@ -22,7 +22,13 @@ import ReactDOM from 'react-dom';
 
 import { Localizer, LocaleProvider, useLocalizer } from 'reactjs-localizer';
 
+Localizer.defaultLanguage = 'EN';
+
 Localizer.mount({
+    'I want %count% likes for my library': { // support inserted params
+        'EN': 'I want %count% likes for my library',
+        'RU': 'Я хочу %count% лайков для моей библиотеки'
+    },
     'Amazing title': {
         'EN': 'Amazing title',
         'RU': 'Удивительный заголовок'
@@ -33,8 +39,6 @@ Localizer.mount({
     }
 });
 
-Localizer.defaultLanguage = 'EN';
-
 function App() {
     // You can get { localize, language, setLanguage } from this hook
     const { localize, setLanguage } = useLocalizer();
@@ -43,6 +47,7 @@ function App() {
 
     return (
         <div>
+            <h1>{localize('I want %count% likes for my library', { count: Date.now() })}</h1>
             <h1>{localize('Amazing title')}</h1>
             <button onClick={toggleLanguage}>{localize('Toggle language')}</button>
         </div>

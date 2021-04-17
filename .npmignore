@@ -1,5 +1,8 @@
 node_modules
 .gitignore
 src
-.prettierrc.json
+.prettierrc
 webpack.config.js
+.babelrc
+.eslintrc
+.eslintignore
