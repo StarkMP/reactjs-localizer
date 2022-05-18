@@ -5,7 +5,7 @@
   "files": [
     "dist/**/*"
   ],
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Localizer for ReactJS applications",
   "scripts": {
     "build": "webpack --mode production --node-env production --config tools/webpack.config.js",
