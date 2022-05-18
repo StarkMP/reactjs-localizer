@@ -1,1 +1,4 @@
-reactjs-localizer.js
+dist/
+node_modules/
+tools/
+public/
