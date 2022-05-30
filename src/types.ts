@@ -1,8 +1,10 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export type Locales = {
   [localeId: string]: { [language: string]: string };
 };
 
-export type LocalizeParams = Record<string, string>;
+export type LocalizeParams = Record<string, string | number>;
 
 export type ProviderProps = {
   currentLanguage: string;
@@ -12,6 +14,6 @@ export type ProviderProps = {
 
 export type ContextProps = {
   language: string;
-  setLanguage: (language: string) => void;
+  setLanguage: Dispatch<SetStateAction<string>>;
   localize: (localeId: string, params?: LocalizeParams) => string;
 };

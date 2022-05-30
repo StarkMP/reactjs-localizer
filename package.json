@@ -1,11 +1,11 @@
 {
   "name": "reactjs-localizer",
-  "main": "./reactjs-localizer.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
-  "version": "1.0.0",
+  "version": "1.0.23",
   "description": "Localizer for ReactJS applications",
   "scripts": {
     "build": "webpack --mode production --node-env production --config tools/webpack.config.js",

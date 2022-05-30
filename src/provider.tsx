@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 import { ContextProps, LocalizeParams, ProviderProps } from './types';
 import { formatLocale } from './utils';
 
-const Context = createContext<ContextProps | null>(null);
+const Context = createContext<ContextProps>({} as ContextProps);
 
 export const useLocalizer = () => useContext(Context);
 
