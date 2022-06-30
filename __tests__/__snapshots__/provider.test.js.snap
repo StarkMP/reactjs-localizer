@@ -5,6 +5,9 @@ Array [
   <h1>
     Amazing title
   </h1>,
+  <span>
+    I'm John
+  </span>,
   <button
     onClick={[Function]}
   >

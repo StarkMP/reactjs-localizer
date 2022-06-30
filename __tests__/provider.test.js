@@ -12,12 +12,22 @@ const locales = {
     'EN': 'Toggle language',
     'RU': 'Переключить язык',
   },
+  'I\'m %userName%': {
+    'EN': 'I\'m %userName%',
+    'RU': 'Я %userName%',
+  },
 };
 
 const Title = () => {
   const { localize } = useLocalizer();
 
   return <h1>{localize('Amazing title')}</h1>;
+};
+
+const UserName = ({ name }) => {
+  const { localize } = useLocalizer();
+
+  return <span>{localize('I\'m %userName%', { userName: name })}</span>;
 };
 
 const ToggleLanguageButton = () => {
@@ -34,6 +44,7 @@ const App = () => {
   return (
     <LocalizerProvider defaultLanguage="EN" currentLanguage="EN" locales={locales}>
       <Title />
+      <UserName name='John' />
       <ToggleLanguageButton />
     </LocalizerProvider>
   );
@@ -50,6 +61,7 @@ describe('A suite', () => {
 
   it('Translate is right', () => {
     expect(instance.findByType('h1').props.children).toBe('Amazing title');
+    expect(instance.findByType('span').props.children).toBe('I\'m John');
   });
 
   it('Toggle language', () => {
@@ -58,5 +70,6 @@ describe('A suite', () => {
     });
 
     expect(instance.findByType('h1').props.children).toBe('Удивительный заголовок');
+    expect(instance.findByType('span').props.children).toBe('Я John');
   });
 });
