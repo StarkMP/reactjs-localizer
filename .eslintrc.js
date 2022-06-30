@@ -16,8 +16,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
-    sourceType: 'module',
-    ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
     },

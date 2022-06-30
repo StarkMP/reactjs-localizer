@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A suite Snapshot is right 1`] = `
+Array [
+  <h1>
+    Amazing title
+  </h1>,
+  <button
+    onClick={[Function]}
+  >
+    Toggle language
+  </button>,
+]
+`;

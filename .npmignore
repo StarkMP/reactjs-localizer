@@ -15,6 +15,7 @@ cypress.json
 
 # tests
 test
+tests
 jest.config.js
 setupJest.ts
 coverage
