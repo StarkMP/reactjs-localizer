@@ -10,8 +10,8 @@ module.exports = {
     rules: [
       {
         test: /\.(j|t)sx?$/,
-        exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader', 'awesome-typescript-loader'].filter(Boolean),
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
     ],
   },

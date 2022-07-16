@@ -5,7 +5,9 @@ import { formatLocale } from './utils';
 
 const Context = createContext<ContextProps>({} as ContextProps);
 
-export const useLocalizer = () => useContext(Context);
+export const useLocalizer = (): ContextProps => useContext(Context);
+
+export const LocalizerContext = Context;
 
 export const LocalizerProvider: React.FC<ProviderProps> = ({
   children,
@@ -19,7 +21,7 @@ export const LocalizerProvider: React.FC<ProviderProps> = ({
 
   const [language, setLanguage] = useState(currentLanguage);
 
-  const getLocalized = (localeId: string, params?: LocalizeParams) => {
+  const getLocalized = (localeId: string, params?: LocalizeParams): string => {
     const locale = locales[localeId];
 
     if (locale === undefined) {
@@ -32,7 +34,7 @@ export const LocalizerProvider: React.FC<ProviderProps> = ({
     );
   };
 
-  const localize = (localeId: string, params?: LocalizeParams) =>
+  const localize = (localeId: string, params?: LocalizeParams): string =>
     getLocalized(localeId, params);
 
   return (

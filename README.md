@@ -6,7 +6,7 @@ Localizer for your react application
 
 - 5kb size
 - Auto-refresh localization after changing language
-- Hooks support
+- Hooks/classes support
 
 ## Installation
 
@@ -20,7 +20,7 @@ yarn install reactjs-localizer
 
 ## Usage example
 
-```js
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -65,6 +65,50 @@ ReactDOM.render(
     <App />
   </LocalizerProvider>,
   document.getElementById('root')
+);
+```
+
+### Class example
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { LocalizerContext } from 'reactjs-localizer';
+
+class App extends React.Component {
+  static contextType = LocalizerContext;
+
+  toggleLanguage = () => {
+    this.context.setLanguage((prev) => (prev === "EN" ? "RU" : "EN"));
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>
+          {this.context.localize("I want %count% likes for my library", {
+            count: Date.now()
+          })}
+        </h1>
+        <h1>{this.context.localize("Amazing title")}</h1>
+        <button onClick={this.toggleLanguage}>
+          {this.context.localize("Toggle language")}
+        </button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <LocalizerProvider
+    defaultLanguage="EN"
+    currentLanguage="EN"
+    locales={locales}
+  >
+    <App />
+  </LocalizerProvider>,
+  document.getElementById("root")
 );
 ```
 

@@ -1,6 +1,9 @@
 import { LocalizeParams } from './types';
 
-export const formatLocale = (phrase: string, params?: LocalizeParams) => {
+export const formatLocale = (
+  phrase: string,
+  params?: LocalizeParams
+): string => {
   if (params) {
     phrase = phrase.replace(/%([\s\S]+?)%/g, (match) => {
       return params[match.slice(1, -1)] as string;
