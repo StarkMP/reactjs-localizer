@@ -1,7 +1,8 @@
 import React from 'react';
 import { act, create } from 'react-test-renderer';
+import {describe, expect, it} from '@jest/globals';
 
-import { LocalizerProvider, useLocalizer } from 'reactjs-localizer';
+import { LocalizerProvider, withLocalizer } from '../src';
 
 const locales = {
   'Amazing title': {
@@ -18,29 +19,23 @@ const locales = {
   },
 };
 
-const Title = () => {
-  const { localize } = useLocalizer();
-
+const Title: React.FC = withLocalizer(({ localize }) => {
   return <h1>{localize('Amazing title')}</h1>;
-};
+});
 
-const UserName = ({ name }) => {
-  const { localize } = useLocalizer();
-
+const UserName: React.FC<{ name: string }> = withLocalizer(({ name, localize }) => {
   return <span>{localize('I\'m %userName%', { userName: name })}</span>;
-};
+});
 
-const ToggleLanguageButton = () => {
-  const { localize, setLanguage } = useLocalizer();
-
+const ToggleLanguageButton: React.FC = withLocalizer(({ localize, setLanguage }) => {
   const handleClick = () => {
     setLanguage((prev) => prev === 'EN' ? 'RU' : 'EN');
   };
 
   return <button onClick={handleClick}>{localize('Toggle language')}</button>;
-};
+});
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <LocalizerProvider defaultLanguage="EN" currentLanguage="EN" locales={locales}>
       <Title />

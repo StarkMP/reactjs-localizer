@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import { ContextProps, LocalizeParams, ProviderProps } from './types';
-import { formatLocale } from './utils';
+import { ContextProps, LocalizeParams, ProviderProps } from '../types';
+import { formatLocale } from '../utils/formatLocale';
 
 const Context = createContext<ContextProps>({} as ContextProps);
 

@@ -5,7 +5,7 @@
   "files": [
     "dist/**/*"
   ],
-  "version": "1.0.27",
+  "version": "1.1.0",
   "description": "Localizer for ReactJS applications",
   "scripts": {
     "build": "webpack --mode production --node-env production --config tools/webpack.config.js && tsc --noEmit false --emitDeclarationOnly",
@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/StarkMP/reactjs-localizer#readme",
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">= 17.0.2",
+    "react-dom": ">= 17.0.2"
   },
   "baseUrl": "",
   "browserslist": [
@@ -54,12 +54,12 @@
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.15.0",
+    "@jest/globals": "^29.3.1",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
-    "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "eslint": "^8.1.0",

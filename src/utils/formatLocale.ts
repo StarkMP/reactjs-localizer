@@ -1,4 +1,4 @@
-import { LocalizeParams } from './types';
+import { LocalizeParams } from '../types';
 
 export const formatLocale = (
   phrase: string,
