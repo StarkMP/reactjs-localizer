@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, JSX, useContext, useState } from 'react';
 
 import { ContextProps, LocalizeParams, ProviderProps } from '../types';
 import { formatLocale } from '../utils/formatLocale';
@@ -9,12 +9,12 @@ export const useLocalizer = (): ContextProps => useContext(Context);
 
 export const LocalizerContext = Context;
 
-export const LocalizerProvider: React.FC<ProviderProps> = ({
+export const LocalizerProvider = ({
   children,
   currentLanguage,
   defaultLanguage,
   locales,
-}) => {
+}: ProviderProps): JSX.Element => {
   if (!currentLanguage) {
     throw new Error('You did\'nt declare the "currentLanguage"');
   }
